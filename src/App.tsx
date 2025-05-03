@@ -214,7 +214,12 @@ function App() {
                         >
                           {event.name}
                           <Show when={evDetailedViewVis[0]()}>
-                            <div class="event-details">
+                            <div
+                              onClick={(e) => {
+                                e.stopPropagation();
+                              }}
+                              class="event-details"
+                            >
                               <div class="event-description">{event.desc}</div>
                               <div class="buttons">
                                 <button
