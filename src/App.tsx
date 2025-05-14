@@ -106,7 +106,7 @@ function App() {
   const newEventFormVis = createSignal<Date>();
   return (
     <>
-      <div class="topbar">
+      <div class="toolbar">
         <button
           onClick={() => {
             monthIndex[1]((v) => {
@@ -278,8 +278,9 @@ function App() {
 
     return (
       <>
-        <div class="dialog">
+        <div class="modal">
           <h3>New Event</h3>
+          <p></p>
           <label>
             Event name
             <input
@@ -300,7 +301,12 @@ function App() {
               }}
             />
           </label>
-          <label>
+          <label
+            style={{
+              display: "flex",
+              "flex-direction": "row",
+            }}
+          >
             <input
               type="checkbox"
               onChange={(e) => {
